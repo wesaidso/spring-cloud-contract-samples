@@ -26,7 +26,7 @@
 		<spring-cloud-contract.version>1.0.2.BUILD-SNAPSHOT</spring-cloud-contract.version>
 
 		<!-- we don't want the verifier to do a jar for us -->
-		<spring.cloud.contract.verifier.skip>true</spring.cloud.contract.verifier.skip>
+		<spring.cloud.contract.verifier.jar.skip>true</spring.cloud.contract.verifier.jar.skip>
 	</properties>
 
 	<dependencies>
