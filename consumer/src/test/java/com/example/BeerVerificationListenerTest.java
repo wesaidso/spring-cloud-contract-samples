@@ -9,8 +9,6 @@ import org.springframework.cloud.contract.stubrunner.StubTrigger;
 import org.springframework.cloud.contract.stubrunner.spring.AutoConfigureStubRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.assertj.core.api.BDDAssertions.then;
-
 /**
  * @author Marcin Grzejszczak
  */
@@ -22,20 +20,12 @@ public class BeerVerificationListenerTest extends AbstractTest {
 	@Autowired StubTrigger stubTrigger;
 	@Autowired BeerVerificationListener listener;
 
-	@Test public void should_increase_the_eligible_counter_when_im_old_enough() throws Exception {
-		int initialCounter = listener.eligibleCounter.get();
+	@Test public void should_increase_the_eligible_counter_when_positive_verification_took_place() throws Exception {
 
-		stubTrigger.trigger("accepted_verification");
-
-		then(listener.eligibleCounter.get()).isGreaterThan(initialCounter);
 	}
 
-	@Test public void should_increase_the_noteligible_counter_when_im_old_enough() throws Exception {
-		int initialCounter = listener.notEligibleCounter.get();
+	@Test public void should_increase_the_noteligible_counter_when_negative_verification_took_place() throws Exception {
 
-		stubTrigger.trigger("rejected_verification");
-
-		then(listener.notEligibleCounter.get()).isGreaterThan(initialCounter);
 	}
 }
 
@@ -45,7 +35,7 @@ public class BeerVerificationListenerTest extends AbstractTest {
 	@Autowired StubTrigger stubTrigger;
 	@Autowired BeerVerificationListener listener;
 
-	@Test public void should_increase_the_eligible_counter_when_im_old_enough() throws Exception {
+	@Test public void should_increase_the_eligible_counter_when_positive_verification_took_place() throws Exception {
 		int initialCounter = listener.eligibleCounter.get();
 
 		stubTrigger.trigger("accepted_verification");
@@ -53,7 +43,7 @@ public class BeerVerificationListenerTest extends AbstractTest {
 		then(listener.eligibleCounter.get()).isGreaterThan(initialCounter);
 	}
 
-	@Test public void should_increase_the_noteligible_counter_when_im_old_enough() throws Exception {
+	@Test public void should_increase_the_noteligible_counter_when_negative_verification_took_place() throws Exception {
 		int initialCounter = listener.notEligibleCounter.get();
 
 		stubTrigger.trigger("rejected_verification");
