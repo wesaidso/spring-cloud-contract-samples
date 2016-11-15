@@ -17,11 +17,6 @@ then:
 	ignored()
 	// Label by means of which the output message can be triggered
 	label 'rejected_verification'
-	// input to the contract
-	input {
-		// the contract will be triggered by a method
-		triggeredBy('clientIsTooYoung()')
-	}
 	// output message of the contract
 	outputMessage {
 		// destination to which the output message will be sent
@@ -32,3 +27,17 @@ then:
 		])
 	}
 }
+
+
+
+/*
+
+
+	// input to the contract
+	input {
+		// the contract will be triggered by a method
+		triggeredBy('clientIsTooYoung()')
+	}
+
+
+ */
