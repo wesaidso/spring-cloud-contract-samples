@@ -17,6 +17,9 @@ then:
 	ignored()
 	// Label by means of which the output message can be triggered
 	label 'rejected_verification'
+	input {
+		triggeredBy('')
+	}
 	// output message of the contract
 	outputMessage {
 		// destination to which the output message will be sent
