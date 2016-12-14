@@ -15,7 +15,7 @@ then:
 		method 'POST'
 		url '/check'
 		body(
-				age: $(regex('[2-9][0-9]'))
+				age: $(regex('[0-1][0-9]'))
 		)
 		headers {
 			contentType(applicationJson())
