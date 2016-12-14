@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>beer-api-producer</artifactId>
+	<artifactId>beer-api-producer-external</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<name>Beer API producer Stubs</name>
@@ -22,6 +22,9 @@
 		<java.version>1.8</java.version>
 		<spring-cloud-contract.version>1.0.2.BUILD-SNAPSHOT</spring-cloud-contract.version>
 		<spring-cloud-dependencies.version>Camden.BUILD-SNAPSHOT</spring-cloud-dependencies.version>
+
+		<!-- SPRING CLOUD CONTRACT - we don't want to generate tests -->
+		<skipTests>true</skipTests>
 	</properties>
 
 	<dependencyManagement>
@@ -46,6 +49,7 @@
 					<skipTests>true</skipTests>
 				</configuration>
 			</plugin>
+			<!-- SPRING CLOUD CONTRACT -->
 			<plugin>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-contract-maven-plugin</artifactId>
@@ -54,8 +58,10 @@
 				<configuration>
 					<!-- By default it would search under src/test/resources/ -->
 					<contractsDirectory>${project.basedir}</contractsDirectory>
+					<excludedFiles>**/target/**/*.*</excludedFiles>
 				</configuration>
 			</plugin>
+			<!-- SPRING CLOUD CONTRACT -->
 		</plugins>
 	</build>
 
