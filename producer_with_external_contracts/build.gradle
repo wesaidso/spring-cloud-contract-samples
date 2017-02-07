@@ -49,6 +49,7 @@ contracts {
 	}
 	contractsWorkOffline = true
 	basePackageForTests = "com.example"
+	contractsPath = "beer-api-consumer/"
 	baseClassMappings {
 		baseClassMapping(".*messaging.*", "com.example.BeerMessagingBase")
 		baseClassMapping(".*rest.*", "com.example.BeerRestBase")

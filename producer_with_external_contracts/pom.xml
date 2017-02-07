@@ -93,6 +93,7 @@
 					<!-- Can't turn this on cause NPE will be thrown ;) -->
 					<contractsWorkOffline>true</contractsWorkOffline>
 					<basePackageForTests>com.example</basePackageForTests>
+					<contractsPath>beer-api-consumer/</contractsPath>
 				</configuration>
 				<!-- this was added for testing purposes only -->
 				<dependencies>
