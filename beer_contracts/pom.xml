@@ -62,7 +62,7 @@
 				<executions>
 					<execution>
 						<id>contracts</id>
-						<phase>prepare-package</phase>
+						<phase>package</phase>
 						<goals>
 							<goal>single</goal>
 						</goals>
